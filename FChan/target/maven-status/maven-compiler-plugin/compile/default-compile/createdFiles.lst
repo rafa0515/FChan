@@ -1,4 +1,10 @@
 modelo\HibernateUtil.class
 modelo\Respuesta.class
+controlador\EliminaPregunta.class
 modelo\Pregunta.class
+modelo\UsuarioDAO.class
+modelo\RespuestaDAO.class
+controlador\CreaPregunta.class
+controlador\VerPreguntas.class
 modelo\Usuario.class
+modelo\PreguntaDAO.class

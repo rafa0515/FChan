@@ -9,22 +9,23 @@
         <h:head>
             <f:facet name="first">
                 <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
-                <title>Guarda proyecto</title>
+                <title>FChan</title>
             </f:facet>
         </h:head>
 
         <h:body>
-
-            <h:form>
-                <h:outputText value="Pregunta :" />
-                <p:inputText value="#{guardaProyecto.nombre}" placeholder=""/>
-                <br/>
-                <h:outputText value="Deescripción de la pregunta:" />
-                <p:inputText value="#{guardaProyecto.nombre}" placeholder=""/>
-                <br/>
-                <p:commandButton value=" Aceptar " action="#{guardaProyecto.guardaProyecto()}" />
-            </h:form>
-
+            
+            <p:dataScroller value="#{verPreguntas.preguntas}" var="pregunta" >
+                <h:outputText value="Titulo:" style="font-weight: bold" />
+                <h:outputText value="#{pregunta.titulo}" style="font-weight: bold" />                
+                <h:outputText value="Detalles: " style="font-weight: bold"/>                
+                <h:outputText value="#{pregunta.descripcion}" style="font-weight: bold"/>
+            </p:dataScroller>
+            
+            <br/>
+            <h:link outcome="crearPregunta" value="Crear Pregunta" />
+            <br/>
+            
         </h:body>
 
     </f:view>

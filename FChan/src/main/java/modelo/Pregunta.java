@@ -34,6 +34,14 @@ public class Pregunta  implements java.io.Serializable {
        this.fecha = fecha;
        this.respuestas = respuestas;
     }
+    
+    public Pregunta(Usuario usuario, String titulo, String descripcion, Date fecha, Set respuestas) {
+       this.usuario = usuario;
+       this.titulo = titulo;
+       this.descripcion = descripcion;
+       this.fecha = fecha;
+       this.respuestas = respuestas;
+    }
    
     public int getId() {
         return this.id;
@@ -77,9 +85,6 @@ public class Pregunta  implements java.io.Serializable {
     public void setRespuestas(Set respuestas) {
         this.respuestas = respuestas;
     }
-
-
-
 
 }
 
