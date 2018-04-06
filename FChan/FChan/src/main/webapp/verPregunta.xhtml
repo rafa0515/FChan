@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+     <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <f:metadata>
+                    <f:viewParam name="idPreg" value="#{detallesPregunta.pregI}" />
+                    <f:viewParam name="x1" value="#{verRespuestas.pregI}" />
+                    <f:viewParam name="x2" value="#{eliminaPregunta.pregI}" />
+                </f:metadata>
+                <title>Pregunta</title>
+            </f:facet>
+        </h:head>
+         
+        <h:body>
+            <pre>
+                <h:outputText value="Titulo:" style="font-weight: bold" />
+                <h:outputText value="#{detallesPregunta.titulo}" style="font-weight: bold"/>
+                <h:outputText value="    Detalles: " style="font-weight: bold"/>                
+                <h:outputText value="#{detallesPregunta.descripcion}" style="font-weight: bold"/>
+                        
+                <p:dataScroller value="#{verRespuestas.respuestas}" var="respuesta" >
+                    <h:outputText value="Usuario:" style="font-weight: bold" />
+                    <h:outputText value="#{respuesta.usuario.username}" style="font-weight: bold"/>
+                    <br/>
+                    <h:outputText value="#{respuesta.contenido}" style="font-weight: bold"/>
+                </p:dataScroller>
+            </pre>
+            <h:form>
+                <p:commandButton value="Inicio" action="index.xhtml"/>
+                <p:commandButton value="Eliminar Pregunta " action="#{eliminaPregunta.eliminarPregunta}"/>
+            </h:form>
+        </h:body>
+
+    </f:view>
+</html>
+
